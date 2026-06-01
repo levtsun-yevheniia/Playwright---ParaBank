@@ -1,4 +1,4 @@
-# 🚀 ParaBank Playwright Automation Framework
+# ParaBank Playwright Automation Framework
 
 UI test automation framework for the ParaBank demo banking application built with Playwright and TypeScript.
 
@@ -14,16 +14,16 @@ This project demonstrates modern test automation practices including:
 
 ---
 
-## 📋 Test Coverage
+### Test Coverage
 
-### Login Page
+** Login Page **
 
 - Positive login with valid credentials
 - Negative login with invalid credentials _(known application issue)_
 
 ---
 
-## 🛠️ Tech Stack
+### Tech Stack
 
 - Playwright
 - TypeScript
@@ -32,37 +32,7 @@ This project demonstrates modern test automation practices including:
 
 ---
 
-## 📁 Project Structure
-
-```text
-parabank-playwright/
-
-├── tests/
-│   └── login/
-│       └── login.spec.ts
-│
-├── pages/
-│   ├── LoginPage.ts
-│   └── AccountsOverviewPage.ts
-│
-├── fixtures/
-│   └── testData.ts
-│
-├── utils/
-│   └── env.ts
-│
-├── environments/
-│   ├── .env.qa
-│   └── .env.dev
-│
-├── playwright.config.ts
-├── package.json
-└── README.md
-```
-
----
-
-## ⚙️ Installation
+### Installation
 
 Clone the repository:
 
@@ -90,7 +60,7 @@ npx playwright install
 
 ---
 
-## 🌎 Environment Configuration
+### Environment Configuration
 
 Environment variables are stored in the `environments` folder.
 
@@ -112,38 +82,32 @@ PASSWORD=demo
 
 ---
 
-## ▶️ Running Tests
+### Running Tests
 
-### Run all tests
+** Run all tests **
 
 ```bash
 npx playwright test
 ```
 
-### Run tests in QA environment
+** Run tests in QA environment **
 
-#### Linux / macOS
+** Linux / macOS **
 
 ```bash
 TEST_ENV=qa npx playwright test
 ```
 
-#### Windows PowerShell
+** Windows PowerShell **
 
 ```powershell
 $env:TEST_ENV="qa"
 npx playwright test
 ```
 
-### Run tests with visible browser
-
-```bash
-npx playwright test --headed
-```
-
 ---
 
-## 📊 Test Reports
+### Test Reports
 
 Open the HTML report:
 
@@ -159,28 +123,28 @@ The report includes:
 
 ---
 
-## 🏗️ Design Principles
+### Design Principles
 
-### Page Object Model (POM)
+** Page Object Model (POM) **
 
 Page interactions are separated from test logic.
 
-### Reusable Test Data
+** Reusable Test Data **
 
 Test data is stored in dedicated fixture files.
 
-### Environment Separation
+** Environment Separation **
 
 Different environments can be executed without modifying test code.
 
-### Stable Locators
+** Stable Locators **
 
 Uses Playwright recommended locators:
 
 ```
 ---
 
-## 🔮 Future Improvements
+### Future Improvements
 
 - API testing
 - Custom fixtures
