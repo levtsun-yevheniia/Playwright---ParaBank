@@ -48,6 +48,14 @@ export class LeftMenuPage {
     });
   }
 
+  async goToOpenNewAccount(): Promise<void> {
+    await this.openNewAccountLink.click();
+  }
+
+  async goToAccountsOverview(): Promise<void> {
+    await this.accountsOverviewLink.click();
+  }
+
   async logout(): Promise<void> {
     await this.logoutLink.click();
   }

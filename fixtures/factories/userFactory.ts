@@ -13,7 +13,7 @@ export const createUser = (): User => {
     zipCode: faker.location.zipCode(),
     phone: faker.phone.number(),
     ssn: faker.string.numeric(9),
-    username: `user_${timestamp}`,
+    username: `user_${faker.string.alphanumeric(10)}`,
     password: 'Password123!',
   };
 };
