@@ -3,11 +3,13 @@ export class AccountsOverviewPage {
   readonly page: Page;
   readonly accountsOverviewTitle: Locator;
   readonly accountRows: Locator;
+  //   readonly accountLinks: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.accountsOverviewTitle = page.getByRole('heading', { name: 'Accounts Overview' });
     this.accountRows = page.locator('#accountTable tbody tr');
+    // this.accountLinks = page.locator('#accountTable a');
   }
   async verifyPageLoaded(): Promise<void> {
     await expect(this.accountsOverviewTitle).toBeVisible();
@@ -29,5 +31,8 @@ export class AccountsOverviewPage {
         name: accountNumber,
       }),
     ).toBeVisible();
+  }
+  async openAccount(accountId: number): Promise<void> {
+    await this.page.getByRole('link', { name: String(accountId) }).click();
   }
 }
