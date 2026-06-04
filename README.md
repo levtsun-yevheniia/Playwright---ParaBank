@@ -160,7 +160,6 @@ Uses Playwright recommended locators.
 
 The framework demonstrates how UI and API layers can be combined in a single end-to-end scenario for faster and more reliable validation.
 
-```
 ---
 
 ### Future Improvements
@@ -171,6 +170,8 @@ The framework demonstrates how UI and API layers can be combined in a single end
 
 ---
 
-
 QA Automation Practice Project using Playwright and TypeScript.
+
+```
+
 ```
