@@ -26,19 +26,19 @@ export class RegistrationPage {
 
     this.registerLink = page.getByRole('link', { name: 'Register' });
 
-    this.firstNameInput = page.locator('#customer\\.firstName');
-    this.lastNameInput = page.locator('#customer\\.lastName');
-    this.addressInput = page.locator('#customer\\.address\\.street');
-    this.cityInput = page.locator('#customer\\.address\\.city');
-    this.stateInput = page.locator('#customer\\.address\\.state');
-    this.zipCodeInput = page.locator('#customer\\.address\\.zipCode');
-    this.phoneInput = page.locator('#customer\\.phoneNumber');
-    this.ssnInput = page.locator('#customer\\.ssn');
+    this.firstNameInput = page.locator('[id="customer.firstName"]');
+    this.lastNameInput = page.locator('[id="customer.lastName"]');
+    this.addressInput = page.locator('[id="customer.address.street"]');
+    this.cityInput = page.locator('[id="customer.address.city"]');
+    this.stateInput = page.locator('[id="customer.address.state"]');
+    this.zipCodeInput = page.locator('[id="customer.address.zipCode"]');
+    this.phoneInput = page.locator('[id="customer.phoneNumber"]');
+    this.ssnInput = page.locator('[id="customer.ssn"]');
 
-    this.usernameInput = page.locator('#customer\\.username');
-    this.passwordInput = page.locator('#customer\\.password');
+    this.usernameInput = page.locator('[id="customer.username"]');
+    this.passwordInput = page.locator('[id="customer.password"]');
     this.confirmPasswordInput = page.locator('#repeatedPassword');
-    this.welcomeMessage = page.locator('#rightPanel');
+    this.welcomeMessage = page.locator('#rightPanel').locator('h1.title');
 
     this.registerButton = page.getByRole('button', {
       name: 'Register',
