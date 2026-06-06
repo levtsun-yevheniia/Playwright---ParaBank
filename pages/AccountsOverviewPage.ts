@@ -3,13 +3,11 @@ export class AccountsOverviewPage {
   readonly page: Page;
   readonly accountsOverviewTitle: Locator;
   readonly accountRows: Locator;
-  //   readonly accountLinks: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.accountsOverviewTitle = page.getByRole('heading', { name: 'Accounts Overview' });
     this.accountRows = page.locator('#accountTable tbody tr');
-    // this.accountLinks = page.locator('#accountTable a');
   }
   async verifyPageLoaded(): Promise<void> {
     await expect(this.accountsOverviewTitle).toBeVisible();

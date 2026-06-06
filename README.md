@@ -7,7 +7,9 @@ This project demonstrates modern test automation practices including:
 - Page Object Model (POM)
 - TypeScript
 - API Client Layer
+- Custom fixtures
 - Environment configuration
+- Multi-browser configuration
 - Reusable test data
 - Test Data Factories
 - Hybrid UI/API End-to-End Testing
@@ -98,7 +100,10 @@ PASSWORD=demo
 **Run all tests**
 
 ```bash
-npx playwright test
+npm run test
+npm run test:chrome
+npm run test:firefox
+npm run test:webkit
 ```
 
 **Run tests in QA environment**
@@ -106,14 +111,13 @@ npx playwright test
 **Linux / macOS**
 
 ```bash
-TEST_ENV=qa npx playwright test
+TEST_ENV=qa npm run test
 ```
 
 **Windows PowerShell**
 
 ```powershell
-$env:TEST_ENV="qa"
-npx playwright test
+$env:TEST_ENV="qa" npm run test
 ```
 
 ---

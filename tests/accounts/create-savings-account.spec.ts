@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../../fixtures/base.fixture';
 
 import { LoginPage } from '../../pages/LoginPage';
 import { AccountsOverviewPage } from '../../pages/AccountsOverviewPage';
@@ -9,15 +9,12 @@ import { LeftMenuPage } from '../../pages/LeftMenuPage';
 import { users } from '../../fixtures/testData';
 
 test.describe('Open New Account', () => {
-  test('User can create a new account', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-
-    const leftMenuPage = new LeftMenuPage(page);
-
-    const accountsOverviewPage = new AccountsOverviewPage(page);
-
-    const openNewAccountPage = new OpenNewAccountPage(page);
-
+  test('User can create a new account', async ({
+    loginPage,
+    leftMenuPage,
+    accountsOverviewPage,
+    openNewAccountPage,
+  }) => {
     await loginPage.open();
 
     await loginPage.login(users.validUser.username, users.validUser.password);
