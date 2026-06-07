@@ -6,12 +6,21 @@
     "test": "playwright test",
     "test:chrome": "playwright test --project=chromium",
     "test:firefox": "playwright test --project=firefox",
-    "test:safari": "playwright test --project=webkit"
+    "test:safari": "playwright test --project=webkit",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui"
   },
-  "keywords": [],
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation",
+    "typescript",
+    "e2e",
+    "api"
+  ],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "E2E and API test automation framework for ParaBank using Playwright and TypeScript",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.9.1"
