@@ -5,7 +5,7 @@ export default defineConfig({
   timeout: 300000,
   use: {
     baseURL: process.env.BASE_URL,
-    headless: false,
+    headless: !!process.env.CI,
     launchOptions: {
       slowMo: 500,
     },
