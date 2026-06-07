@@ -8,6 +8,7 @@ This project demonstrates modern test automation practices including:
 - TypeScript
 - API Client Layer
 - Custom fixtures
+- CI/CD integration
 - Environment configuration
 - Multi-browser configuration
 - Reusable test data
@@ -122,6 +123,22 @@ $env:TEST_ENV="qa" npm run test
 
 ---
 
+## CI/CD
+
+GitHub Actions automatically runs Playwright tests on:
+
+- push to main branch
+- pull requests
+
+Workflow:
+
+- Install dependencies
+- Install Playwright browsers
+- Execute tests
+- Upload HTML report artifact
+
+---
+
 ### Test Reports
 
 Open the HTML report:
@@ -168,7 +185,6 @@ The framework demonstrates how UI and API layers can be combined in a single end
 
 ### Future Improvements
 
-- CI/CD integration
 - Allure reporting
 - and more
 
