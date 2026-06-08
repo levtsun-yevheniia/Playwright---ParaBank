@@ -3,9 +3,11 @@ import { APIRequestContext, expect } from '@playwright/test';
 export class BankApiClient {
   constructor(private request: APIRequestContext) {}
 
-  async login(username: string, password: string) {
+  async login(username: string, password: string): Promise<number> {
     const response = await this.request.get(`/services/bank/login/${username}/${password}`);
-    expect(response.ok()).toBeTruthy();
+    if (!response.ok()) {
+      throw new Error(`Login failed: ${response.status()}`);
+    }
     return Number(await response.text());
   }
 

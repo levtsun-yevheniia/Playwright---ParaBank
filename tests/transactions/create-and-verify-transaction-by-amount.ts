@@ -14,6 +14,7 @@ test('UI Login → API Transfer → API Search → UI Verification', async ({
   await loginPage.login(users.validUser.username, users.validUser.password);
 
   const customerId = await bankApiClient.login(users.validUser.username, users.validUser.password);
+  expect(customerId).toBeGreaterThan(0);
 
   const accounts = await bankApiClient.getCustomerAccounts(customerId);
 
