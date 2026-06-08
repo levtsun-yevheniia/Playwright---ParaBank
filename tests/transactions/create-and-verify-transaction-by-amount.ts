@@ -2,7 +2,7 @@ import { test, expect } from '../../fixtures/base.fixture';
 import { TransferFactory } from '../../fixtures/factories/transferFactory';
 import { users } from '../../fixtures/testData';
 
-test('UI Login → API Transfer → API Search → UI Verification', async ({
+test('Log in through UI, transfer funds by API, and verify the transaction in UI @smoke @api', async ({
   loginPage,
   accountActivityPage,
   accountsOverviewPage,

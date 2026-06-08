@@ -155,6 +155,18 @@ The report includes:
 
 ---
 
+## Project Structure
+
+├── tests/ # Test files organized by feature
+├── pages/ # Page Object Models
+├── fixtures/ # Custom Playwright fixtures
+│ └── factories/ # Test data factories
+├── api/ # API client layer
+├── utils/ # Utility functions
+└── environments/ # Environment configurations
+
+---
+
 ### Design Principles
 
 **Page Object Model (POM)**

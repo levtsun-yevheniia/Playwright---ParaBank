@@ -1,15 +1,8 @@
 import { test, expect } from '../../fixtures/base.fixture';
-
-import { LoginPage } from '../../pages/LoginPage';
-import { AccountsOverviewPage } from '../../pages/AccountsOverviewPage';
-import { OpenNewAccountPage } from '../../pages/OpenNewAccountPage';
-
-import { LeftMenuPage } from '../../pages/LeftMenuPage';
-
 import { users } from '../../fixtures/testData';
 
 test.describe('Open New Account', () => {
-  test('User can create a new account', async ({
+  test('Create a new savings account for a logged-in user @smoke', async ({
     loginPage,
     leftMenuPage,
     accountsOverviewPage,

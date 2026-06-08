@@ -2,7 +2,7 @@ import { test } from '../../fixtures/base.fixture';
 import { createUser } from '../../fixtures/factories/userFactory';
 
 test.describe('Registration', () => {
-  test('User can register and login with the same credentials', async ({
+  test('Can register a new user and log in with the same credentials @smoke', async ({
     registrationPage,
     loginPage,
     leftMenuPage,
