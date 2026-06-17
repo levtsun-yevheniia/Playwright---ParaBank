@@ -14,16 +14,25 @@ test('Log in through UI, transfer funds by API, and verify the transaction in UI
   await loginPage.login(users.validUser.username, users.validUser.password);
 
   const customerId = await bankApiClient.login(users.validUser.username, users.validUser.password);
+
   expect(customerId).toBeGreaterThan(0);
 
   const accounts = await bankApiClient.getCustomerAccounts(customerId);
+
+  console.log('accounts', accounts);
 
   expect(accounts.length).toBeGreaterThanOrEqual(2);
 
   const fromAccountId = accounts[0].id;
   const toAccountId = accounts[1].id;
 
-  await bankApiClient.transferFunds(fromAccountId, toAccountId, transfer.amount);
+  const transferResult = await bankApiClient.transferFunds(
+    fromAccountId,
+    toAccountId,
+    transfer.amount,
+  );
+
+  expect(transferResult).toContain('Successfully transferred');
 
   const transactions = await bankApiClient.findTransactionsByAmount(fromAccountId, transfer.amount);
 

@@ -8,6 +8,7 @@ import { OpenNewAccountPage } from '../pages/OpenNewAccountPage';
 import { RegistrationPage } from '../pages/RegistrationPage';
 
 import { BankApiClient } from '../api/clients/BankApiClient';
+import { AccountDetailsPage } from '../pages/AccountDetailsPage';
 
 type PageFixtures = {
   loginPage: LoginPage;
@@ -17,6 +18,7 @@ type PageFixtures = {
   leftMenuPage: LeftMenuPage;
   openNewAccountPage: OpenNewAccountPage;
   registrationPage: RegistrationPage;
+  accountDetailsPage: AccountDetailsPage;
 };
 
 export const test = base.extend<PageFixtures>({
@@ -30,6 +32,10 @@ export const test = base.extend<PageFixtures>({
 
   accountActivityPage: async ({ page }, use) => {
     await use(new AccountActivityPage(page));
+  },
+
+  accountDetailsPage: async ({ page }, use) => {
+    await use(new AccountDetailsPage(page));
   },
 
   bankApiClient: async ({ request }, use) => {
