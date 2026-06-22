@@ -2,7 +2,8 @@ import { defineConfig, devices } from '@playwright/test';
 require('./utils/env');
 export default defineConfig({
   testDir: './tests',
-  timeout: 300000,
+  retries: process.env.CI ? 2 : 0,
+  timeout: 40000,
   use: {
     baseURL: process.env.BASE_URL,
     headless: !!process.env.CI,

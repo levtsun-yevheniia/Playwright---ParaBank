@@ -7,6 +7,7 @@ test('Log in through UI, transfer funds by API, and verify the transaction in UI
   accountActivityPage,
   accountsOverviewPage,
   bankApiClient,
+  page,
 }) => {
   const transfer = TransferFactory.create();
 
@@ -18,8 +19,6 @@ test('Log in through UI, transfer funds by API, and verify the transaction in UI
   expect(customerId).toBeGreaterThan(0);
 
   const accounts = await bankApiClient.getCustomerAccounts(customerId);
-
-  console.log('accounts', accounts);
 
   expect(accounts.length).toBeGreaterThanOrEqual(2);
 

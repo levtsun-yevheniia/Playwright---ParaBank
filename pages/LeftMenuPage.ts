@@ -1,4 +1,5 @@
 import { Locator, Page } from '@playwright/test';
+import { Logger } from '../utils/Logger';
 
 export class LeftMenuPage {
   readonly page: Page;
@@ -49,14 +50,17 @@ export class LeftMenuPage {
   }
 
   async goToOpenNewAccount(): Promise<void> {
+    Logger.info('Navigating to Open New Account page');
     await this.openNewAccountLink.click();
   }
 
   async goToAccountsOverview(): Promise<void> {
+    Logger.info('Navigating to Accounts Overview page');
     await this.accountsOverviewLink.click();
   }
 
   async logout(): Promise<void> {
+    Logger.info('Logging out from left menu');
     await this.logoutLink.click();
   }
 }

@@ -1,4 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test';
+import { Logger } from '../utils/Logger';
 
 export class OpenNewAccountPage {
   readonly page: Page;
@@ -28,6 +29,7 @@ export class OpenNewAccountPage {
   }
 
   async createAccount(accountType: 'CHECKING' | 'SAVINGS', fromAccount: string): Promise<void> {
+    Logger.info(`Creating new ${accountType} account`);
     await this.accountTypeSelect.selectOption(accountType);
 
     await this.fromAccountSelect.selectOption(fromAccount);
@@ -36,10 +38,12 @@ export class OpenNewAccountPage {
   }
 
   async verifyAccountCreated(): Promise<void> {
+    Logger.info('Verifying new account creation success message');
     await expect(this.successMessage).toBeVisible();
   }
 
   async getNewAccountNumber(): Promise<string> {
+    Logger.info('Getting new account number after account creation');
     await expect(this.newAccountId).toBeVisible();
 
     return (await this.newAccountId.textContent()) ?? '';

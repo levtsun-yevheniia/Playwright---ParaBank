@@ -1,4 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test';
+import { Logger } from '../utils/Logger';
 export class LoginPage {
   readonly page: Page;
   readonly usernameInput: Locator;
@@ -17,11 +18,13 @@ export class LoginPage {
     await this.page.goto('/');
   }
   async login(username: string, password: string): Promise<void> {
+    Logger.info(`Logging in as ${username}`);
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.loginButton.click();
   }
   async verifyLoginError(): Promise<void> {
+    Logger.info(`Verifing login error message is visible`);
     await expect(this.errorMessage).toBeVisible();
   }
 }

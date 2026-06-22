@@ -8,12 +8,15 @@ This project demonstrates modern test automation practices including:
 - TypeScript
 - API Client Layer
 - Custom fixtures
-- CI/CD integration
+- CI/CD integration (GitHub Actions)
 - Environment configuration
 - Multi-browser configuration
 - Reusable test data
+- Authentication Hooks (beforeEach)
 - Test Data Factories
+- Retry strategy for CI execution
 - Hybrid UI/API End-to-End Testing
+- Faker for dynamic test data generation
 - Playwright best practices
 - HTML reporting
 - Screenshots on failure
@@ -119,6 +122,18 @@ TEST_ENV=qa npm run test
 
 ```powershell
 $env:TEST_ENV="qa" npm run test
+```
+
+---
+
+**Test execution by tags:**
+
+@smoke
+@api
+@negative
+
+```bash
+npm run test:chrome -- --grep "@negative"
 ```
 
 ---

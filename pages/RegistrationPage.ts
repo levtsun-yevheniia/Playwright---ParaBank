@@ -1,4 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test';
+import { Logger } from '../utils/Logger';
 import { User } from '../fixtures/types/User';
 
 export class RegistrationPage {
@@ -48,11 +49,13 @@ export class RegistrationPage {
   }
 
   async open(): Promise<void> {
+    Logger.info('Opening registration page');
     await this.page.goto('/');
     await this.registerLink.click();
   }
 
   async register(user: User): Promise<void> {
+    Logger.info(`Registering user ${user.username}`);
     await this.firstNameInput.fill(user.firstName);
     await this.lastNameInput.fill(user.lastName);
     await this.addressInput.fill(user.address);
@@ -70,6 +73,7 @@ export class RegistrationPage {
   }
 
   async verifyUserCreated(username: string): Promise<void> {
+    Logger.info(`Verifying registration success for user ${username}`);
     await expect(this.welcomeMessage).toContainText(username);
   }
 }
